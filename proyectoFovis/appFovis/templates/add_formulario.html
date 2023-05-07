@@ -1,0 +1,23 @@
+{% extends './navbar.html' %}
+{% load static %}
+
+{% block content %}
+    <center>
+        <h1>Agregar Formulario</h1>
+       <br/><br/>
+       {% if submitted %}
+            EL fORMULARIO HA SIDO AGREGADO!!
+       {% else %}
+
+      
+
+            <form action="" method=POST>
+                    {% csrf_token %}
+                    {{ form.as_p }}
+
+                    <input type="submit" value="Submit" class="btn btn-secondary" />
+            </form>
+       {% endif %}
+    </center>
+
+{% endblock %}
